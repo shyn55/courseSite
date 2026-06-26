@@ -54,7 +54,7 @@ const CourseSchema = new mongoose.Schema(
     shortDescription: {
       type: String,
       required: true,
-      maxlength: 300,
+      maxlength: 301,
       trim: true,
     },
 
