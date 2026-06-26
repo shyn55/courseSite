@@ -1,0 +1,289 @@
+/* components/Footer.module.css */
+
+.footer {
+  background: linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%);
+  border-top: 2px solid rgba(139, 92, 246, 0.08);
+  padding: 60px 40px 0;
+  margin-top: 80px;
+  direction: rtl;
+}
+
+.footerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+/* بخش برند */
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.brand h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4c1d95;
+  margin: 0;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  color: #6b21a5;
+  line-height: 1.8;
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* شبکه‌های اجتماعی */
+.socialLinks {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.socialLinks a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c3aed;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.socialLinks a:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+.socialLinks a svg {
+  font-size: 18px;
+}
+
+/* عناوین بخش‌ها */
+.footerSection h4 {
+  color: #4c1d95;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footerSection h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  border-radius: 2px;
+}
+
+/* لیست‌ها */
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerSection ul li {
+  transition: all 0.3s ease;
+}
+
+.footerSection ul li a {
+  color: #6b21a5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footerSection ul li a:hover {
+  color: #7c3aed;
+  transform: translateX(-4px);
+  font-weight: 500;
+}
+
+/* اطلاعات تماس */
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #6b21a5;
+  font-size: 14px;
+}
+
+.contactInfo li svg {
+  color: #8b5cf6;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.contactInfo li:hover svg {
+  transform: scale(1.1);
+}
+
+/* فوتر پایین */
+.footerBottom {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.3),
+    transparent
+  );
+  margin: 0 0 20px 0;
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 30px;
+  color: #6b21a5;
+  font-size: 14px;
+}
+
+.bottomContent p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bottomLinks a {
+  color: #6b21a5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  opacity: 0.7;
+}
+
+.bottomLinks a:hover {
+  color: #7c3aed;
+  opacity: 1;
+}
+
+.separator {
+  opacity: 0.3;
+}
+
+/* ریسپانسیو */
+@media (max-width: 1024px) {
+  .footerContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 0;
+    margin-top: 40px;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footerSection {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footerSection h4::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .contactInfo li {
+    justify-content: center;
+  }
+
+  .bottomContent {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .bottomLinks {
+    gap: 8px;
+  }
+
+  .brand h3 {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 16px 0;
+  }
+
+  .socialLinks a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .socialLinks a svg {
+    font-size: 16px;
+  }
+
+  .bottomLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
