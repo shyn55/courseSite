@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
-const MONGO_URL = process.env.MONGO_URL;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-if (!MONGO_URL) {
-  throw new Error("MONGO_URL is not defined");
+if (!MONGODB_URI) {
+  throw new Error("MONGODB_URI is not defined");
 }
 
 let cached = global.mongoose;
@@ -21,7 +21,7 @@ export default async function connectDB() {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGO_URL, {
+    cached.promise = mongoose.connect(MONGODB_URI, {
       bufferCommands: false,
     });
   }
